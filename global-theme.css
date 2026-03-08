@@ -850,7 +850,7 @@ div[style*="z-index:999;"] div#textWindow {
 
 
 :root {
-    --header-logo: url("https://rule-wiki.wikidot.com/local--files/component:theme/rule-wiki-new-white.svg");
+    --header-logo: url("https://cdn.jsdelivr.net/gh/Talcite/rule-wiki/rule-wiki-new-white.svg");
 
     --title-size: 1.8rem;
     --subtitle-size: 0.9rem;
