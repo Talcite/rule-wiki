@@ -1,0 +1,30 @@
+/* Importing the base code */
+ 
+@import url("https://cdn.jsdelivr.net/gh/Talcite/rule-wiki/global-theme.css");
+ 
+/* Changing the global variables */
+ 
+:root {
+    --header-color-one: 60, 50, 200;
+    --header-color-two: 0, 0, 20;
+    --link-color: 200, 0, 0;
+ 
+    --header-title: "Rule International";
+    --header-subtitle: "International Translation Archive";
+ 
+    --title-size: 1.8rem;
+    --subtitle-size: 0.88rem;
+}
+ 
+@media only screen and (max-width: 800px) {
+:root {
+    --title-size: 1.65rem;
+}
+}
+ 
+@media only screen and (max-width: 420px) {
+:root {
+    --title-size: calc(1.65rem - 0.09 * (420px - 100vw));
+    --subtitle-size: calc(0.88rem - 0.05 * (420px - 100vw));
+}
+}
