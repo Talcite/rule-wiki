@@ -1,2 +1,3 @@
 # rule-wiki
-Codes for the "Rule Archive" website on Wikidot.
+Codes for the "[Rule Archive](https://rule-wiki.wikidot.com/)" website on Wikidot.
+
