@@ -1,0 +1,61 @@
+/* 引入版式 */
+ 
+@import url("https://cdn.jsdelivr.net/gh/Talcite/rule-wiki/global-theme.css");
+ 
+/* 修改主题色 */
+ 
+:root {
+    --header-color-one: 10, 0, 30;
+    --header-color-two: 0, 0, 20;
+    --link-color: 200, 0, 0;
+}
+ 
+/* 修改网站标题 */
+ 
+:root:lang(cn) {
+    --header-title: "规则怪谈档案馆职员站";
+    --header-subtitle: "观察，记录，归档";
+}
+ 
+/* 按钮样式 */
+ 
+#page-content .button {
+    border: none;
+    border-radius: 2em;
+    box-shadow: 0 2px 3px gray;
+    width: fit-content;
+    padding: 0.5em 1em;
+    margin: 1em;
+    transition: background-color 0.3s;
+}
+ 
+#page-content .button.center {
+    margin: 1em auto;
+}
+ 
+#page-content .button.right{
+    margin-left: auto;
+}
+ 
+#page-content .button a {
+    color: black;
+}
+ 
+#page-content .button:hover {
+    background-color: #eee;
+}
+ 
+/* 讨论串显示样式 */
+ 
+#page-content .thread-wrap {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+ 
+#page-content .thread-title {
+    font-size: 1.3em;
+    font-weight: bold;
+}
