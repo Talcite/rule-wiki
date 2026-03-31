@@ -22,7 +22,7 @@
 
 :root {
 
-    /* ------- 变量 ------- */
+/* ------- 变量 ------- */
 
     --header-title: var(--title);
     --title: "SCP基金会";
@@ -102,7 +102,7 @@
 
     --owindow-title-height: 2.25rem;
 
-    /* AIM支持 */
+/* AIM支持 */
 
     --AIM-border-color: var(--basalt-tertiary-color);
 }
@@ -163,8 +163,30 @@
 
 /* ------- 顶栏 ------- */
 
-#top-bar div[class*="top-bar"]>ul>li>ul::before {
+#top-bar div[class*="top-bar"] ul li ul {
+    box-sizing: border-box;
+    padding-left: var(--base-border-width);
+}
+
+#top-bar div[class*="top-bar"]:not(:has(ul ul ul)) ul li ul {
+    max-height: calc(100dvh - var(--header-final-height));
+    overflow-y: auto;
+}
+
+#top-bar div[class*="top-bar"] > ul > li:focus-within > ul,
+#top-bar div[class*="top-bar"] > ul > li:hover > ul,
+#top-bar div[class*="top-bar"] > ul > li > ul:focus-within,
+#top-bar div[class*="top-bar"] > ul > li > ul:hover {
+    box-shadow: inset var(--base-border-width) 0 0 rgb(var(--top-bar-link-background-hover-alt));
+    transition: opacity var(--header-link-transition-1st), box-shadow 0s ease 0.2s;
+}
+
+#top-bar div[class*="top-bar"] > ul > li > ul::before {
     width: var(--base-border-width);
+}
+
+#top-bar div[class*="top-bar"] ul li ul li a {
+    white-space: nowrap;
 }
 
 #top-bar div[class*="top-bar"] ul li ul li.sfhover ul li a:not(:hover, :focus) {
@@ -193,34 +215,34 @@
     height: var(--owindow-title-height);
 }
 
-.owindow .button-bar>a[onclick*="cleanAll"] {
+.owindow .button-bar > a[onclick*="cleanAll"] {
     width: var(--owindow-title-height);
     height: var(--owindow-title-height);
 }
 
-.owindow .button-bar>a[onclick*="cleanAll"]::after {
+.owindow .button-bar > a[onclick*="cleanAll"]::after {
     background-color: rgb(var(--UI-title-color));
     transition: background-color 125ms ease-out;
 }
 
-.owindow .button-bar>a[onclick*="cleanAll"]:hover::after {
+.owindow .button-bar > a[onclick*="cleanAll"]:hover::after {
     background-color: rgb(var(--UI-title-background-color));
 }
 
-.owindow>.content.modal-body>img+h1+table {
+.owindow > .content.modal-body > img + h1 + table {
     border-width: var(--thin-border-width) 0;
 }
 
-.owindow>.content.modal-body>img+h1+table>tbody>tr:not(:last-child) {
+.owindow > .content.modal-body > img + h1 + table > tbody > tr:not(:last-child) {
     border-bottom-width: var(--thin-border-width);
 }
 
-.owindow .button-bar>a:not([onclick*="cleanAll"]),
+.owindow .button-bar > a:not([onclick*="cleanAll"]),
 .owindow div[style*="margin-top"] a {
     border-width: var(--thin-border-width);
 }
 
-div[id*="page-options-bottom"]>a {
+div[id*="page-options-bottom"] > a {
     border-bottom: solid var(--base-border-width) rgb(var(--general-border-color));
 }
 
@@ -244,15 +266,15 @@ div:where(#action-area, .buttons) :is(a, input).btn {
     border-width: var(--thin-border-width);
 }
 
-#action-area>h1::after,
-#action-area>h1::before,
-#history-subarea>h2::after,
-#history-subarea>h2::before,
+#action-area > h1::after,
+#action-area > h1::before,
+#history-subarea > h2::after,
+#history-subarea > h2::before,
 #revision-list .page-history tr[id*="revision-row"]::before {
     height: var(--thin-border-width);
 }
 
-#history-form-1>table.form>tbody>tr:first-child::before {
+#history-form-1 > table.form > tbody > tr:first-child::before {
     height: var(--base-border-width);
 }
 
@@ -273,34 +295,34 @@ hr {
 
 /* YUI Tab */
 
-.yui-navset.yui-navset-top>ul.yui-nav {
+.yui-navset.yui-navset-top > ul.yui-nav {
     font-family: var(--title-font);
     gap: 0;
     background-color: rgb(var(--tab-background-color));
 }
 
-.yui-navset.yui-navset-top>ul.yui-nav li {
+.yui-navset.yui-navset-top > ul.yui-nav li {
     background-color: transparent;
     border-bottom: solid var(--base-border-width) rgb(var(--general-border-color));
 }
 
-.yui-navset.yui-navset-top>ul.yui-nav li::before {
+.yui-navset.yui-navset-top > ul.yui-nav li::before {
     background-color: transparent;
     border-bottom: solid var(--base-border-width) rgb(var(--tab-hover-background-color));
 }
 
-.yui-navset.yui-navset-top>ul.yui-nav li.selected::before {
+.yui-navset.yui-navset-top > ul.yui-nav li.selected::before {
     width: 100%;
     border-bottom: solid var(--base-border-width) rgb(var(--tab-selected-background-color));
     background-color: transparent;
 }
 
-.yui-navset.yui-navset-top>ul.yui-nav li a:is(:hover, :focus),
-.yui-navset.yui-navset-top>ul.yui-nav li.selected a {
+.yui-navset.yui-navset-top > ul.yui-nav li a:is(:hover, :focus),
+.yui-navset.yui-navset-top > ul.yui-nav li.selected a {
     color: rgb(var(--basalt-main-text-color));
 }
 
-.yui-navset.yui-navset-top>ul.yui-nav li.selected::after {
+.yui-navset.yui-navset-top > ul.yui-nav li.selected::after {
     display: none;
 }
 
@@ -327,8 +349,7 @@ hr {
     margin-block-end: -1rem;
 }
 
-.bibitems,
-.footnotes-footer {
+.bibitems, .footnotes-footer {
     margin-block-start: 2rem;
 }
 
@@ -348,15 +369,14 @@ hr {
     border: none !important;
 }
 
-.hovertip .content .footnote::before,
-.hovertip .content .reference::before {
+.hovertip .content .footnote::before, .hovertip .content .reference::before {
     width: 100%;
     height: var(--base-border-width);
     inset-inline-start: 0;
     inset-block-start: 0;
 }
 
-.footnotes-footer .footnote-footer>a:first-child,
+.footnotes-footer .footnote-footer > a:first-child,
 .bibitems .bibitem::after {
     word-break: keep-all;
 }
@@ -375,39 +395,37 @@ div.rate-box-with-credit-button .creditButton {
     margin-block-end: calc(var(--base-border-width) * -1);
 }
 
-div.rate-box-with-credit-button .creditButton>p>a::before {
+div.rate-box-with-credit-button .creditButton > p > a::before {
     display: none;
 }
 
-div.rate-box-with-credit-button .creditButton>p>a::after {
+div.rate-box-with-credit-button .creditButton > p > a::after {
     height: calc(100% - var(--base-border-width)) !important;
     background-color: rgb(var(--basalt-main-text-color));
     padding: 0;
 }
 
-div.page-rate-widget-box span.btn>a,
-div.rate-box-with-credit-button .creditButton>p>a {
+div.page-rate-widget-box span.btn > a,
+div.rate-box-with-credit-button .creditButton > p > a {
     border-block-end-width: var(--base-border-width);
 }
 
-div.rate-box-with-credit-button .creditButton>p>a {
+div.rate-box-with-credit-button .creditButton > p > a {
     border-block-end-style: solid;
     border-block-end-color: transparent;
 }
 
-div.rate-box-with-credit-button .creditButton>p>a:hover {
+div.rate-box-with-credit-button .creditButton > p > a:hover {
     border-block-end-color: rgb(var(--rate-module-credit-color));
 }
 
-.fader iframe,
-.fader a {
+.fader iframe, .fader a {
     border: none;
 }
 
 /* 图片块 */
 
-.image-block,
-.scp-image-block {
+.image-block, .scp-image-block {
     border-bottom-width: var(--base-border-width);
 }
 
@@ -474,7 +492,7 @@ div.table.dborder table.wiki-content-table td {
 
 /* 标签 */
 
-#main-content>.page-tags>span a {
+#main-content > .page-tags > span a {
     border-radius: .5rem;
 }
 
@@ -484,7 +502,7 @@ div.table.dborder table.wiki-content-table td {
     box-shadow: 0 0 0 var(--blockquote-border-width) rgb(var(--basalt-tertiary-color));
 }
 
-:is(.blockquote, blockquote, .code)>hr {
+:is(.blockquote, blockquote, .code) > hr {
     background-color: rgb(var(--basalt-tertiary-color));
 }
 
@@ -583,12 +601,12 @@ div#page-content div#u-component-top-box {
     color: inherit;
 }
 
-div#page-content div#u-adult-warning>div#u-adult-header,
-div#page-content div#u-component-top-box>div#u-component-header {
+div#page-content div#u-adult-warning > div#u-adult-header,
+div#page-content div#u-component-top-box > div#u-component-header {
     text-shadow: none;
 }
 
-div#page-content div#u-component-top-box+hr {
+div#page-content div#u-component-top-box + hr {
     display: none;
 }
 
@@ -628,11 +646,11 @@ div.Parallel-AIM div[class$="aim"] hr {
     background-color: rgb(var(--AIM-border-color));
 }
 
-div.Parallel-AIM div[class$="aim"] div.cell-container-image+hr {
+div.Parallel-AIM div[class$="aim"] div.cell-container-image + hr {
     margin-bottom: 0;
 }
 
-div.Parallel-AIM div[class$="aim"] div.cell-container-image+hr+div.cell-container {
+div.Parallel-AIM div[class$="aim"] div.cell-container-image + hr + div.cell-container {
     margin-top: 0;
 }
 
@@ -698,6 +716,10 @@ div#page-content div.earthworm div.last:not(.true)::before {
 div#page-content div.earthworm div.hub {
     border: solid var(--base-border-width) rgb(var(--basalt-tertiary-color));
     background-color: rgb(var(--basalt-secondary-color));
+}
+
+div#page-content div.earthworm a[href="/"] {
+    color: rgb(var(--basalt-main-text-color));
 }
 
 /* 灰暗之镜支持 */
@@ -793,52 +815,60 @@ div[style*="z-index:999;"] div#textWindow {
 }
 
 @keyframes closeR {
-    0% {
-        transform: rotateZ(0deg);
-        width: 400px;
-        height: 350px;
-        opacity: 1;
-    }
+0% {
+    transform: rotateZ(0deg);
+    width: 400px;
+    height: 350px;
+    opacity: 1;
+}
 
-    50% {
-        transform: rotateZ(0deg);
-        width: 400px;
-        height: 65px;
-    }
+50% {
+    transform: rotateZ(0deg);
+    width: 400px;
+    height: 65px;
+}
 
-    90% {
-        transform: rotateZ(0deg);
-        width: 65px;
-    }
+90% {
+    transform: rotateZ(0deg);
+    width: 65px;
+}
 
-    100% {
-        transform: rotateZ(90deg);
-        opacity: 0.5;
-    }
+100% {
+    transform: rotateZ(90deg);
+    opacity: 0.5;
+}
 }
 
 @keyframes openR {
-    0% {
-        transform: rotateZ(90deg);
-        opacity: 0.5;
-    }
+0% {
+    transform: rotateZ(90deg);
+    opacity: 0.5;
+}
 
-    10% {
-        transform: rotateZ(0deg);
-        width: 80px;
-    }
+10% {
+    transform: rotateZ(0deg);
+    width: 80px;
+}
 
-    50% {
-        transform: rotateZ(0deg);
-        width: 400px;
-        height: 65px;
-    }
+50% {
+    transform: rotateZ(0deg);
+    width: 400px;
+    height: 65px;
+}
 
-    100% {
-        transform: rotateZ(0deg);
-        width: 400px;
-        height: 350px;
-        opacity: 1;
+100% {
+    transform: rotateZ(0deg);
+    width: 400px;
+    height: 350px;
+    opacity: 1;
+}
+}
+
+/* 移动端修复 */
+
+@media (max-width: 1024px) {
+    #top-bar div[class*="top-bar"] ul li ul {
+        max-height: calc(100dvh - var(--top-bar-mobile-height));
     }
 }
 
